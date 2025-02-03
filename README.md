@@ -5,6 +5,8 @@ You need to have Docker installed, run `run.sh` to start.
 
 # Usage
 
+You can put files in the files folder, to see them in your container in /home/sportlink/files
+
 ## MacOS 
 
 For MacOS you install XQuartz:
@@ -14,3 +16,4 @@ For MacOS you install XQuartz:
 - Reboot
 
 Some code from https://github.com/vrolijken/sportlink-knvb-docker
+
