@@ -1,5 +1,5 @@
 # https://github.com/karakun/OpenWebStart/releases/download/v1.11.0/OpenWebStart_linux_1_11_0.deb
-FROM debian:bullseye
+FROM openjdk:8-jre
 
 ENV TZ=Europe/Amsterdam
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
@@ -8,10 +8,11 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
 
 RUN apt-get update && apt-get install -y curl 
 
-RUN curl -LO https://github.com/karakun/OpenWebStart/releases/download/v1.11.0/OpenWebStart_linux_1_11_0.deb
+RUN curl -LO https://github.com/karakun/OpenWebStart/releases/download/v1.11.1/OpenWebStart_linux_1_11_1.deb
 
 RUN apt-get update \
-    && apt-get install -y ./OpenWebStart_linux_1_11_0.deb \
+    && apt-get install -y ./OpenWebStart_linux_1_11_1.deb \
+    && apt-get install -y libxext6 libxrender1 libxtst6 \
     && apt-get clean
 
 # Parameters for default user:group

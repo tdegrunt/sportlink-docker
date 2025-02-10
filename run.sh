@@ -5,6 +5,10 @@ cd "$( dirname "${BASH_SOURCE[0]}" )" || exit 2
 
 xhost +localhost
 
+# docker build --tag sportlink-knvb:1.0 .
+# For Apple Mx architecture
+docker buildx build --platform linux/amd64 --tag sportlink-knvb:1.0 .
+
 docker run --rm --net=host -e DISPLAY=host.docker.internal:0 \
   --volume="$HOME/.Xauthority:/root/.Xauthority:rw" \
   --volume="$(pwd)/config:/home/sportlink/.config/icedtea-web" \
