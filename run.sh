@@ -3,6 +3,8 @@
 # make sure we're in the right dir
 cd "$( dirname "${BASH_SOURCE[0]}" )" || exit 2
 
+# https://github.com/XQuartz/XQuartz/issues/31
+defaults write org.xquartz.X11 enable_render_extension 0
 xhost +localhost
 
 # docker build --tag sportlink-knvb:1.0 .
